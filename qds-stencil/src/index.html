@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/qds-stencil.esm.js"></script>
+  <script nomodule src="/build/qds-stencil.js"></script>
+
+  <script type="module" src="web-ui/se-components/se-components.esm.js"></script>
+  <script nomodule="" src="web-ui/se-components/se-components.js"></script>
+  <link rel="stylesheet" href="fonts/css/styles.css">
+  </link>
+  <link rel="stylesheet" href="icons/css/styles.css">
+  </link>
+</head>
+
+<body>
+  <se-app option="website">
+    <my-component-stencil name="Options to choose" options="choose any one" />
+  </se-app>
+
+  <!-- states='["Karnataka", "Maharashtra", "Delhi", "Goa"]'> -->
+  <script>
+    (async () => {
+      await customElements.whenDefined('my-component-stencil');
+      const customStencilComponent = document.querySelector('my-component-stencil');
+      const states = ["Karnataka", "Maharashtra", "Delhi", "Goa","Apoorv"]
+      await customStencilComponent.setStates(states);
+    })();
+  </script>
+</body>
+
+</html>
